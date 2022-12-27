@@ -10,7 +10,7 @@ Deno.test(function buildRootTest() {
       ["test_1", {
         tags: ["t1"],
         stage: "test",
-        scripts: ['echo "test"'],
+        script: ['echo "test"'],
       }],
     ]),
   );
@@ -24,7 +24,7 @@ Deno.test(function buildRootTest() {
     test_1: {
       tags: ["t1"],
       stage: "test",
-      scripts: ['echo "test"'],
+      script: ['echo "test"'],
     },
     stages: ["test", "build", "deploy"],
   };
@@ -40,7 +40,7 @@ Deno.test(function buildRootTestUseAddJob() {
   jobs.addJob("test_1", {
     tags: ["t1"],
     stage: "test",
-    scripts: ['echo "test"'],
+    script: ['echo "test"'],
   });
   const root: Root = new Root({
     jobs,
@@ -51,7 +51,7 @@ Deno.test(function buildRootTestUseAddJob() {
     test_1: {
       tags: ["t1"],
       stage: "test",
-      scripts: ['echo "test"'],
+      script: ['echo "test"'],
     },
     stages: ["test", "build", "deploy"],
   };
@@ -70,7 +70,7 @@ Deno.test(function canUseImageName() {
       name: "test_image:latest",
     },
     stage: "test",
-    scripts: ['echo "test"'],
+    script: ['echo "test"'],
   });
   const root: Root = new Root({
     stages: ["test", "build", "deploy"],
@@ -84,7 +84,7 @@ Deno.test(function canUseImageName() {
       },
       tags: ["t1"],
       stage: "test",
-      scripts: ['echo "test"'],
+      script: ['echo "test"'],
     },
     stages: ["test", "build", "deploy"],
   };
@@ -101,7 +101,7 @@ Deno.test(function convertYaml() {
       ["test_1", {
         tags: ["t1"],
         stage: "test",
-        scripts: ['echo "test"'],
+        script: ['echo "test"'],
       }],
     ]),
   );

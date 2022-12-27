@@ -45,7 +45,7 @@ export class Jobs {
 export class Job {
   tags?: string[];
   stage?: Stage;
-  scripts?: string[];
+  script?: string[];
   image?: {
     name?: string;
   };
